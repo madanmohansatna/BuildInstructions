@@ -1,0 +1,24 @@
+ Pixel Experience
+Sync
+
+# Initialize local repository
+repo init -u https://github.com/PixelExperience/manifest -b eleven
+
+# Sync
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+
+Build
+
+# Set up environment
+$ . build/envsetup.sh
+
+# Choose a target
+$ lunch aosp_$device-userdebug
+
+# Build the code
+$ mka bacon -jX
+
+
+git clone https://github.com/madanmohansatna/pe_android_vendor_realme_X2.git  ./vendor/realme/X2
+git clone https://github.com/madanmohansatna/pe_kernel_realme_sm6150.git  ./kernel/realme/sm6150
+git clone https://github.com/madanmohansatna/pe-device_realme_X2.git   ./device/realme/X2

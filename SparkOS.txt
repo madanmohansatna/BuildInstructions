@@ -1,0 +1,15 @@
+spark
+
+
+git clone https://github.com/madanmohansatna/pe_android_vendor_realme_X2.git  ./vendor/realme/X2
+git clone https://github.com/madanmohansatna/pe_kernel_realme_sm6150.git  ./kernel/realme/sm6150
+git clone https://github.com/madanmohansatna/pe-device_realme_X2.git   ./device/realme/X2
+
+
+Building Spark
+
+In case you are building Mac OS X, you are required to install coreutils from MacPorts before you continue. In order to build, use this command:
+
+   . build/env*
+   lunch spark_<devicecodename>-userdebug
+   mka spark -j$(nproc --all)

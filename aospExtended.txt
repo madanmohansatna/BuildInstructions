@@ -1,0 +1,34 @@
+aosp extended
+
+
+How to Build?
+
+To initialize your local repository using the AospExtended trees, use a command like this:
+
+  repo init -u git://github.com/AospExtended/manifest.git -b 11.x
+
+To initialize a shallow clone, which will save even more space & time, use a command like this:
+
+  repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x
+
+Then to sync up:
+
+  repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+
+Finally to build:
+
+  source build/envsetup.sh
+  lunch aosp_device_codename-userdebug
+  m aex -j$(nproc --all) | tee log.txt
+  
+  
+
+git clone https://github.com/madanmohansatna/device_realme_X2.git    ./device/realme/X2
+git clone https://github.com/madanmohansatna/kernel_realme_sm6150.git  ./kernel/realme/sm6150
+git clone https://github.com/madanmohansatna/vendor_realme_X2.git  ./vendor/realme/X2
+
+
+
+git clone https://github.com/AndroX2/android_vendor_realme_X2.git   ./vendor/realme/X2
+git clone https://github.com/AndroX2/fork_kernel_realme_sm6150.git  ./kernel/realme/sm6150
+git clone https://github.com/AndroX2/nad-device_realme_X2.git  ./device/realme/X2

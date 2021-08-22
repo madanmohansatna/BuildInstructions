@@ -1,75 +1,3 @@
-aosp extended
-
-
-How to Build?
-
-To initialize your local repository using the AospExtended trees, use a command like this:
-
-  repo init -u git://github.com/AospExtended/manifest.git -b 11.x
-
-To initialize a shallow clone, which will save even more space & time, use a command like this:
-
-  repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x
-
-Then to sync up:
-
-  repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-
-Finally to build:
-
-  source build/envsetup.sh
-  lunch aosp_device_codename-userdebug
-  m aex -j$(nproc --all) | tee log.txt
-  
-  
-  
-  
-  Pixel Experience
-Sync
-
-# Initialize local repository
-repo init -u https://github.com/PixelExperience/manifest -b eleven
-
-# Sync
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-
-Build
-
-# Set up environment
-$ . build/envsetup.sh
-
-# Choose a target
-$ lunch aosp_$device-userdebug
-
-# Build the code
-$ mka bacon -jX
-
-
-
-
-
-
-git clone https://github.com/madanmohansatna/device_realme_X2.git    ./device/realme/X2
-
-
-git clone https://github.com/madanmohansatna/kernel_realme_sm6150.git  ./kernel/realme/sm6150
-
-git clone https://github.com/madanmohansatna/vendor_realme_X2.git  ./vendor/realme/X2
-
-
-
-
-
-
-git clone https://github.com/AndroX2/android_vendor_realme_X2.git   ./vendor/realme/X2
-
-
-git clone https://github.com/AndroX2/fork_kernel_realme_sm6150.git  ./kernel/realme/sm6150
-
-git clone https://github.com/AndroX2/nad-device_realme_X2.git  ./device/realme/X2
-
-
-
 git remote -v
 # View existing remotes
 # origin  https://github.com/user/repo.git (fetch)
@@ -86,23 +14,29 @@ git remote -v
 
 
 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
+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
 
 
 
 
 
-spark
+
+https://satnamadanmohan@gmail.com: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@github.com/madanmohansatna/spark-device_realme_X2.git
 
 
-git clone https://github.com/madanmohansatna/pe_android_vendor_realme_X2.git  ./vendor/realme/X2
-git clone https://github.com/madanmohansatna/pe_kernel_realme_sm6150.git  ./kernel/realme/sm6150
-git clone https://github.com/madanmohansatna/pe-device_realme_X2.git   ./device/realme/X2
+
+https://[USERNAME]:[NEW TOKEN]@github.com/[USERNAME]/[REPO].git
 
 
-Building Spark
 
-In case you are building Mac OS X, you are required to install coreutils from MacPorts before you continue. In order to build, use this command:
+git remote set-url origin https://github.com/madanmohansatna/spark_vendor_realme_X2.git
 
-   . build/env*
-   lunch spark_<devicecodename>-userdebug
-   mka spark -j$(nproc --all)
+
+
+
+git branch -m pe spark
+git fetch origin
+git branch -u origin/spark spark
+git remote set-head origin -a
+
+

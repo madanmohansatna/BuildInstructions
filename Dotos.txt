@@ -1,0 +1,19 @@
+Downloading Source Code:
+
+To get started with the building process, you'll need to get familiar with Git and Repo.
+
+To initialize your local repository, use a command like this:
+
+repo init -u git://github.com/DotOS/manifest.git -b dot11
+
+Then to sync up:
+
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+
+Compilation of DotOS:
+
+From root directory of Project, perform following commands in terminal to start Compilation.
+
+source build/envsetup.sh
+lunch dot_<devicecodename>-userdebug
+make bacon
